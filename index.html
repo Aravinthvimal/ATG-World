@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.a1/jquery.min.js"></script>
+
+    <!-- Stylesheet and Script -->
+    <link href="./src/style.css" rel="stylesheet">
+    <script src="./src/script.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- IBM Plex Sans -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/bb91c29888.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <title> ATG World </title>
+</head>
+<body onload="ready()">
+  <section id="All-posts">
+    <div id="container" >                                                 <!-- Lg NavBar -->
+        <header class="d-none d-lg-block">
+            <ul class="nav d-flex justify-content-between my-2 mx-auto px-5">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"> <img id="logo" src="../Components/logo.jpeg" alt="logo" /> </a>
+                </li>
+                <li class="nav-item">
+                  <div class="rounded-pill border-0 bg-secondary p-2 my-1" style="--bs-bg-opacity: .1" >
+                    <i id="searchicon" class="fas fa-search px-2" ></i>
+                    <input id="searchbar" class="bg-transparent text-secondary" type="search" placeholder="Search for your favorite groups in ATG">
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="my-2">
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Show a second modal and hide this one with the button below.
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Hide this modal and show the first with the button below.
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p id="create"> Create account. <a id="free" data-bs-toggle="modal" class="text-decoration-none fw-bold" href="#exampleModalToggle" role="button"> It's free! </a> <i class="fas fa-caret-down"></i> </p>
+                  </div>
+                </li>
+            </ul>
+        </header>
+
+        <div id="hero-container" class="">                                <!-- Lg Hero -->
+          <img id="hero-image" src="./Components/computer.png" class="img-fluid " alt="hero-image" />
+          <div id="hero-text" class="position-absolute d-flex flex-column">
+            <h1 id="line1" class="text-white"> Computer Engineering </h1>
+            <p id="line2" class="text-white"> 142,765 Computer Engineers follow this </p>
+          </div>
+          <div id="sm-nav" class="d-lg-none position-absolute mx-auto px-4">  <!-- Sm Hero -->
+            <i class="fas fa-arrow-left "></i>
+            <button id="join-group" type="button" class="btn text-white btn-light bg-transparent" onclick="group()" >Join Group</button>
+          </div> 
+        </div>
+        
+      <div class="d-none d-lg-block">                                     <!-- Lg secondary NavBar Left -->
+        <nav class="container d-flex justify-content-between mx-auto my-2 ">
+
+          <div class="navbar-container">
+            <ul class="nav container d-flex justify-content-start mx-auto">
+              <li class="nav-link active-link">
+                <a class="nav-link active text-dark fw-bold" aria-current="page" href="#All-posts"> All Posts(32) </a>
+                <div class="underline"> </div>
+              </li>
+              <li class="nav-link">
+                <a class="nav-link text-secondary" href="#Article"> Article </a>
+                <div class="underline"> </div>
+              </li>
+              <li class="nav-link">
+                <a class="nav-link text-secondary" href="#Event"> Event </a>
+                <div class="underline"> </div>
+              </li>
+              <li class="nav-link">
+                <a class="nav-link text-secondary" href="#Education"> Education </a>
+                <div class="underline"> </div>
+              </li>
+              <li class="nav-link">
+                <a class="nav-link text-secondary" href="#Job"> Job </a>
+                <div class="underline"> </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>                                                           <!-- Lg Secondary NavBar Right -->
+            <ul class="nav container d-flex justify-content-end my-2 mx-auto">
+              <li class="nav-item px-2">
+                <div id="write">
+                  <button type="button" class="btn bg-transparent" > Write a Post </button>
+                  <i class="fas fa-caret-down"></i>
+                </div>
+              </li>
+              <li class="nav-item px-2">
+                <div id="join">
+                  <i class="fas fa-user-friends" style="color: white;"></i>
+                  <button type="button" class="btn bg-transparent text-white" onclick="lgGroup1()"> Join Group </button>
+                </div>
+                <div id="leave">
+                  <i class="fas fa-sign-out-alt" style="color: black; opacity: 0.5;"></i>
+                  <button type="button" class="btn bg-transparent opacity-50" onclick="lgGroup2()"> Leave Group </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+                                                                          
+      <div id="posts" class="d-lg-none container d-flex justify-content-between mx-auto my-2">
+          <div>                                                           <!-- Sm NavBar -->
+            <p class="fw-bold"> Posts(368) </p>
+          </div>
+          <div>
+            <button type="button" class="btn bg-secondary rounded-lg fw-bold" style="--bs-bg-opacity: .2"> Filter: All <i class="fas fa-caret-down px-1"></i> </button>
+          </div>
+      </div>
+
+      <div class="d-flex justify-content-start py-2">
+        <div> 
+          <div class="py-3">
+            <div class="card">
+              <img src="./Components/post1.jpg" class="card-img-top" alt="post1">
+              <div class="card-body">
+                <p> <span style='font-size:15px;'>&#9997;</span> Article </p>
+                <h5 class="card-title"> What if famous brands had regular fonts? Meet RegulaBrands! </h5>
+                <div class="dropstart">
+                  <button 
+                  class="btn bg-white btn-light dropdow-toggle"
+                  onclick="toggle()" 
+                  type="button" id="dropdownMenuButton1" 
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                    <i id="menu" class="fas fa-ellipsis-h" ></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"> Edit </a></li>
+                    <li><a class="dropdown-item" href="#"> Report </a></li>
+                    <li><a class="dropdown-item" href="#"> Option 3 </a></li>
+                  </ul>
+                </div>
+                <h6 class="card-text"> I’ve worked in UX for the better part of a decade. From now on, I plan to rei… </h6>
+                <div class="d-flex justify-content-between pt-4">
+                  <div class="">
+                    <p class="username"> <img id="user" src="./Components/user1.jpg" alt="user1" class="mx-2"> Sarthak Kamra</p>
+                  </div>
+                  <div class="my-2">
+                    <p style="font-size: 15px; font-weight: 400;"> 
+                      <i class="far fa-eye" style="font-size: 12px;"></i>
+                      <button id="share" class="px-3"> <i class="fas fa-share-alt" style="font-size: 15px;"></i> <span id="share-text" class="d-lg-none"> Share </span> </button>
+                      1.4k views </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <img src="./Components/post2.jpg" class="card-img-top" alt="post2">
+              <div class="card-body">
+                <p> <span style='font-size:15px;'> 🔬️ Education </p>
+                <h5 class="card-title"> Tax Benefits for Investment under National Pension Scheme launched by Government </h5>
+                <div class="dropstart">
+                  <button 
+                  class="btn bg-white btn-light dropdow-toggle"
+                  onclick="toggle()"
+                  type="button" id="dropdownMenuButton1" 
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                    <i id="menu" class="fas fa-ellipsis-h" ></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"> Edit </a></li>
+                    <li><a class="dropdown-item" href="#"> Report </a></li>
+                    <li><a class="dropdown-item" href="#"> Option 3 </a></li>
+                  </ul>
+                </div>
+                <h6 class="card-text"> I’ve worked in UX for the better part of a decade. From now on, I plan to rei… </h6>
+                <div class="d-flex justify-content-between pt-4">
+                  <div class="">
+                    <p class="username"> <img id="user" src="./Components/user2.jpg" alt="user1" class="mx-2"> Sarah West </p>
+                  </div>
+                  <div class="my-2">
+                    <p style="font-size: 15px; font-weight: 400;"> 
+                      <i class="far fa-eye" style="font-size: 12px;"></i>
+                      <button id="share" class="px-3"> <i class="fas fa-share-alt" style="font-size: 15px;"></i> <span id="share-text" class="d-lg-none"> Share </span> </button>
+                      1.4k views </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="py-3">
+            <div class="card">
+              <img src="./Components/post3.jpg" class="card-img-top" alt="post3">
+              <div class="card-body">
+                <p> <span style='font-size:15px;'> 🗓️ Meetup </p>
+                <h5 class="card-title"> Finance & Investment Elite Social Mixer @Lujiazui </h5>
+                <div class="dropstart">
+                  <button 
+                  class="btn bg-white btn-light dropdow-toggle"
+                  onclick="toggle()"
+                  type="button" id="dropdownMenuButton1" 
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                    <i id="menu" class="fas fa-ellipsis-h" ></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"> Edit </a></li>
+                    <li><a class="dropdown-item" href="#"> Report </a></li>
+                    <li><a class="dropdown-item" href="#"> Option 3 </a></li>
+                  </ul>
+                </div>
+                <div>
+                  <div><h3 class="card-new-text"> <i class="fas fa-calendar-day px-1"></i> Fri, 12 Oct, 2018 <i class="bi bi-geo-alt" style="padding-left: 4vw;"></i> Ahmedabad, India </h3></div>
+                  <div class="py-4"><button id="website" type="button" class="btn"> Visit Website </button></div>
+                </div>
+                
+                <div class="d-flex justify-content-between pt-5">
+                  <div class="">
+                    <p class="username"> <img id="user" src="./Components/user3.jpg" alt="user1" class="mx-2"> Ronal Jones </p>
+                  </div>
+                  <div class="my-2">
+                    <p style="font-size: 15px; font-weight: 400;"> 
+                      <i class="far fa-eye" style="font-size: 12px;"></i>
+                      <button id="share" class="px-3"> <i class="fas fa-share-alt" style="font-size: 15px;"></i> <span id="share-text" class="d-lg-none"> Share </span> </button>
+                      1.4k views </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="py-3">
+            <div class="card">
+              <div class="card-body">
+                <p> <span style='font-size:15px;'> 💼️ Job </p>
+                <h5 class="card-title"> Software Developer </h5>
+                <div class="dropstart">
+                  <button 
+                  class="btn bg-white btn-light dropdow-toggle"
+                  onclick="toggle()"
+                  type="button" id="dropdownMenuButton1" 
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                    <i id="menu" class="fas fa-ellipsis-h" ></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"> Edit </a></li>
+                    <li><a class="dropdown-item" href="#"> Report </a></li>
+                    <li><a class="dropdown-item" href="#"> Option 3 </a></li>
+                  </ul>
+                </div>
+                <div>
+                  <div><h3 class="card-new-text"> <i class="bi bi-briefcase px-1"></i> Innovaccer Analytics Private Ltd. <i class="bi bi-geo-alt" style="padding-left: 4vw;"></i> Noida, India </h3></div>
+                  <div class="py-4"><button id="apply" type="button" class="btn"> Apply on Timesjobs </button></div>
+                </div>
+                
+                <div class="d-flex justify-content-between pt-5">
+                  <div class="">
+                    <p class="username"> <img id="user" src="./Components/user4.jpg" alt="user1" class="mx-2"> Joseph Gray </p>
+                  </div>
+                  <div class="my-2">
+                    <p style="font-size: 15px; font-weight: 400;"> 
+                      <i class="far fa-eye" style="font-size: 12px;"></i>
+                      <button id="share" class="px-3"> <i class="fas fa-share-alt" style="font-size: 15px;"></i> <span id="share-text" class="d-lg-none"> Share </span> </button>
+                      1.4k views </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+        <div class="d-none d-lg-block d-flex mx-auto my-2">
+          <div id="location">
+            <div class="d-inline p-2"> <i class="bi bi-geo-alt"></i> </div>
+            <div class="d-inline fw-bold"> <input type="text" id="location-text" value="Noida, India" placeholder="Enter your location" onfocusout="saveLocation()" disabled> </div>
+            <div id="reset-icon" class="d-inline fw-bold"> <button class="btn" onclick="reset()"> <i class="fas fa-times"></i> </button> </div>
+            <div id="edit-icon" class="d-inline"> <button class="btn" onclick="editLocation()"> <i class="fas fa-pen"></i> </button> </div>
+          </div>
+          <div class="d-none d-lg-block">
+            <h3 id="info" class="my-4 fs-6"> <i id="info-icon" class="bi bi-exclamation-circle"></i> <p id="info-text"> Your location will help us serve better and extend a personalised experience. </p> </h3>
+          </div>
+          <div id="recom" class="py-3">
+            <div class="d-inline p-2"> <i class="far fa-thumbs-up"></i> </div>
+            <div class="d-inline p-2 "> REOMMENDED GROUPS </div>
+          </div>
+          <div>
+            <table class="d-none d-lg-block table table-borderless">
+              <tbody>
+                <tr>
+                  <td scope="col"> <img class="follow-img" src="./Components/follow1.jpg" /> </td>
+                  <td scope="col" class="follow-text">Leisure</td>
+                  <td scope="col"> <button class="follow-btn" onclick="follow1()"> <span id="following1" class="follow-btn-txt px-3">Follow</span> </button> </td>
+                </tr>
+                <tr>
+                  <td scope="row"> <img class="follow-img" src="./Components/follow2.jpg" />  </td>
+                  <td class="follow-text">Activism</td>
+                  <td><button class="follow-btn" onclick="follow2()"> <span id="following2" class="follow-btn-txt px-3">Follow</span> </button></td>
+                </tr>
+                <tr>
+                  <td scope="row"> <img class="follow-img" src="./Components/follow3.jpg" /> </td>
+                  <td class="follow-text">MBA</td>
+                  <td><button class="follow-btn" onclick="follow3()"> <span id="following3" class="follow-btn-txt px-3">Follow</span> </button></td>
+                </tr>
+                <tr>
+                  <td scope="row"> <img class="follow-img" src="./Components/follow4.jpg" /> </td>
+                  <td class="follow-text">Philosophy</td>
+                  <td> <button class="follow-btn" onclick="follow4()"> <span id="following4" class="follow-btn-txt px-3">Follow</span> </button> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

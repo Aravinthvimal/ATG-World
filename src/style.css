@@ -1,0 +1,400 @@
+body {
+    box-sizing: content-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+#logo {
+    height: auto;
+    width: 200px;
+}
+
+#searchbar {
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    width: 300px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#searchicon {
+    font-size: 12px;
+    color: gray;
+}
+
+#create {
+    font-weight: 500;
+}
+
+#hero-image {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+}
+  
+#hero-container::before {
+    content: '';
+    position: absolute; 
+    top: 10vh;
+    right: 0px;
+    bottom: 30%;
+    left: 0px;
+    background: black;
+    opacity: 0.6;
+}
+
+#hero-text {
+    top: 48vh;
+    left: 14vh;
+    line-height: 12px;
+}
+
+#line2 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+@media screen and (min-width:0px) and (max-width:990px) {
+    #hero-container::before {
+        top: 0px;
+        bottom: 40%;
+    }   
+
+    #hero-text {
+        left: 5vw;
+        top:41vh;
+    }
+
+    #line1 {
+        font-size: 24px;
+    }
+
+    #line2 {
+        font-size: 17px;
+    }
+}
+
+#join {
+    background: #2F6CE5;
+    padding-left: 10px;
+}
+
+#join button {
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+#leave {
+    background: transparent;
+    border: 1px solid #989899;
+    padding-left: 5px;
+}
+
+#leave button {
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+#leave i {
+    position: relative;
+    top: 2px;
+    left: 5px;
+}
+
+#write {
+    background: #EDEEF0;
+    padding-right: 10px;
+}
+
+#write button {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+ul.nav li a:hover {
+    color: #2F6CE5;  
+}
+
+nav li a:hover, ul.nav li a:active, ul.nav li a:focus  {
+    color: black !important;
+}
+
+ul.nav li.active a {
+    color: black !important;
+}
+
+nav {
+    border-bottom: 2px solid #E0E0E0;
+}
+
+.navbar-container ul li .underline {
+    position: relative;
+	height: 2px;
+	background-color: transparent;
+	width: 0%;
+	transition: width 0.2s, background-color 0.5s;
+	margin: 0 auto;
+    top: 10px;
+}
+
+.navbar-container ul li.active-link .underline {
+	width: 100%;
+	background-color: black;
+}
+
+.navbar-container ul li:hover .underline {
+	background-color: black;
+	width: 100%;
+}
+
+.navbar-container ul li:active a {
+	transition: none;
+	color: black
+}
+
+.navbar-container ul li:active .underline {
+	transition: none;
+	background-color: black;
+}
+
+#sm-nav {
+    color: white;
+    top: 10px;
+}
+
+#sm-nav i {
+    padding-right: 64vw;
+    cursor: pointer;
+}
+
+#sm-nav button {
+    outline: none;
+    box-shadow: none;
+    font-size: 12px;
+}
+
+.card {
+    width: 50vw;
+    margin-left: 8vw;
+}
+
+#posts p {
+    font-size: 15px;
+}
+
+#posts button {
+    font-size: 15px;
+    outline: none;
+    box-shadow: none;
+}
+
+.card img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.card-body p span {
+    position: relative;
+    top: -3px;
+}
+
+.card-body p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card-body h5 {
+    font-size: 18px;
+    max-width: 70vw;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.card-body h6 {
+    font-size: 17px;
+    color: #5C5C5C;   
+    font-weight: 400;
+    max-width: 70vw;
+}
+
+.card-body button {
+    position: relative;
+    top: -13vh;
+    border: none;
+    float: right;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.card-body button i {
+    font-size: 20px;
+}
+
+#dropdownMenuButton1:focus {
+    background-color: #BFBFC0;
+}
+
+#user {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+
+.username {
+    font-weight: 500;
+}
+ 
+#share {
+    top: -5px;
+    padding: 5px;
+    margin-left: 25px;
+    float: inline-end;
+}
+
+#share-text {
+    top: 0.5px;
+    left: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+@media screen and (min-width:0px) and (max-width:990px) {
+    .card {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+    }
+
+    .card-body h5, .card-body h6 {
+        max-width: 70vw;
+        line-height: 20px;
+        font-size: medium;
+    }
+
+    .card-body h6 {
+        font-size: small;
+    }
+
+    #share {
+        right: 2vw;
+    }
+
+    .dropstart button {
+        padding: 1px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-right: 2vw;
+    }
+    
+    #menu {
+        font-size: 15px;
+    }
+}
+
+#location {
+    border-bottom: 1px solid #B8B8B8;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: transparent;
+}
+
+#location-text {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    font-weight: 600;
+    color: black;
+}
+
+#location button {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#info-icon {
+    padding-left: 10px;
+    opacity: 0.5;
+}
+
+#info-text {
+    position: relative;
+    max-width: 15vw;
+    left: 45px;
+    top: -20px;
+    font-size: small;
+    opacity: 0.5;
+}
+
+.follow-img {
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.follow-text {
+    position: relative;
+    top: 1vh;
+    right: 0.5vh;
+    font-weight: 600;
+}
+
+.follow-btn {
+    position: relative;
+    text-align: right;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: #EDEEF0;
+    border-radius: 50px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    left: 10vh;
+    top: 1vh;
+}
+
+.follow-btn-txt {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#recom {
+    position: relative;
+    left: 1vh;
+}
+
+.card-body h3 {
+    font-size: 13px;
+}
+
+#website {
+    position: absolute;
+    font-size: small;
+    color: #E56135;
+    font-weight: 500;
+    top: 70%;
+    width: 90%;
+    left: 2.5vw;
+    border: 1px solid #A9AEB8;
+    border-radius: 7px;
+}
+
+#apply {
+    position: absolute;
+    font-size: small;
+    color: #02B875;
+    font-weight: 500;
+    top: 50%;
+    width: 90%;
+    left: 2.5vw;
+    border: 1px solid #A9AEB8;
+    border-radius: 7px;
+}
+
+
