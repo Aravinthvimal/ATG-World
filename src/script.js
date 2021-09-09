@@ -4,7 +4,7 @@ $('.nav-link').on('click', function() {
 });
 
 function ready() {
-    document.getElementsByTagName("i")[11].style.display = "none";
+    document.getElementsByTagName("i")[24].style.display = "none";
     document.getElementById("leave").style.display = "none";
 }
 
@@ -39,20 +39,20 @@ function editLocation() {
     editLoc.value = "";
     editLoc.focus();
 
-    document.getElementsByTagName("i")[12].style.display = "none";
-    document.getElementsByTagName("i")[11].style.display = "block";
+    document.getElementsByTagName("i")[25].style.display = "none";
+    document.getElementsByTagName("i")[24].style.display = "block";
 }
 
 function saveLocation() {
-    document.getElementsByTagName("i")[11].style.display = "none"
-    document.getElementsByTagName("i")[12].style.display = "block";
+    document.getElementsByTagName("i")[25].style.display = "none"
+    document.getElementsByTagName("i")[24].style.display = "block";
     document.getElementById("location-text").disabled = true;
 }
 
 function reset() {
     document.getElementById("location-text").value = "";
-    document.getElementsByTagName("i")[11].style.display = "none"
-    document.getElementsByTagName("i")[12].style.display = "block";
+    document.getElementsByTagName("i")[24].style.display = "none"
+    document.getElementsByTagName("i")[25].style.display = "block";
 }
 
 function follow1() {
